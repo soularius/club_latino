@@ -12,6 +12,12 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+get_template_part('custom-properties/add', 'roles-users');
+get_template_part('custom-properties/add', 'option-configure');
+get_template_part('custom-properties/add', 'group-user');
+get_template_part('custom-properties/add', 'team-user');
+get_template_part('custom-properties/add', 'cpt-events');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
