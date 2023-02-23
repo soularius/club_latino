@@ -80,8 +80,9 @@ function cb_edit_user_group_section( $user ) {
   $tax = get_taxonomy( 'grupo' );
 
   /* Make sure the user can assign terms of the departments taxonomy before proceeding. */
-  if ( !current_user_can( $tax->cap->assign_terms ) )
+  if (!current_user_can( $tax->cap->assign_terms )) {
     return;
+  }
 
   /* Get the terms of the 'grupo' taxonomy. */
   $terms = get_terms( 'grupo', array( 'hide_empty' => false ) ); ?>
