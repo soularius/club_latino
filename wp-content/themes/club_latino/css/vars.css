@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #7cdb1d;
+  --color-secondary: #dbab1d;
+  --color-success: #7acb8d;
+  --color-danger: #e15866;
+  --color-warning: #c0ad72;
+  --color-info: #4bc2d4;
+  --color-dark: #2c2c2c;
+  --color-dark-gray: #424242;
+  --color-light: #eee6e6;
+  --color-primary-light: #7cdb1d58;
+  --color-secondary-light: #dbac1d4e;
+  --font-primary: 'Quicksand', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  --font-secondary: 'Indie Flower', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -1,0 +1,113 @@
+html, body {
+  font-size: 16px;
+}
+
+body.page {
+  margin-bottom: 0;
+}
+
+.site-cl .title-h1 {
+  font-family: var(--font-secondary);
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
+.site-cl .title-h1-v2 {
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.site-cl .title-h2 {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+.site-cl .btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-family: var(--font-primary);
+  color: var(--color-light) !important;
+  border-width: 2px;
+}
+
+.site-cl .btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  font-family: var(--font-primary);
+  color: var(--color-light) !important;
+  border-width: 2px;
+}
+
+.site-cl .bgn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-family: var(--font-primary);
+  color: var(--color-light) !important;
+  border-width: 2px;
+}
+
+.site-cl .bgn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  font-family: var(--font-primary);
+  color: var(--color-light) !important;
+  border-width: 2px;
+}
+
+.site-cl .bgn-danger {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+  font-family: var(--font-primary);
+  color: var(--color-light) !important;
+  border-width: 2px;
+}
+
+.site-cl .btn-primary:hover {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+}
+
+.site-cl .btn-secondary:hover {
+  background-color: transparent;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary) !important;
+}
+
+.site-cl .form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-form-control-bg);
+  border-color: var(--color-secondary);
+  outline: 0;
+  box-shadow: 0 0 0 .25rem var(--color-secondary-light)
+}
+
+.form-check-input {
+  border-color: var(--color-primary);
+  border-width: 2px;
+}
+
+.form-check-input:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--color-primary);
+  outline: 0;
+  box-shadow: 0 0 0 .25rem var(--color-primary-light);
+}
+
+.site-cl .title-p {
+  font-family: var(--font-primary);
+}
+
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}

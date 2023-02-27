@@ -1,0 +1,12 @@
+#page-init {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: calc(100vh - 56px);
+    background-size: cover;
+}
+
+.admin-bar #page-init {
+    height: calc(100vh - 88px);
+}

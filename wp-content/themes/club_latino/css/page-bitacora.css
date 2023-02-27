@@ -1,0 +1,52 @@
+.card-binnacle {
+    max-width: 800px;
+    box-shadow: 0px 0px 10px 0px var(--color-dark);
+    border: 2px solid var(--color-secondary);
+    background-color: #ffffffdb;
+}
+
+#binnacleform .form-floating input {
+    min-width: 420px;
+    border: 1px solid var(--color-secondary);
+}
+
+.title-binnacle {
+    text-shadow: 1px 1px 1px var(--color-dark);
+}
+
+.card-binnacle .btn-very:hover {
+    background-color: #fff;
+    font-weight: 800;
+    text-shadow: -1px 1px 0px #2c2c2c;
+}
+
+.alert-binnacle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.box-events {
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+.title-events {
+    text-shadow: -1px 1px 0px #2c2c2c;
+}
+
+.box-select-inv .select2-container {
+    width: 100% !important;
+}
+
+.box-select-inv .select2-container .selection .select2-selection.select2-selection--single {
+    height: 40px;
+    border: 1px solid var(--color-secondary);
+}
+
+.box-select-inv .select2-container .selection #select2-invitado-container,
+.box-select-inv .select2-container .selection .select2-selection__arrow {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}

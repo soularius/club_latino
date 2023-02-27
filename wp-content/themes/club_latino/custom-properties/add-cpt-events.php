@@ -33,7 +33,7 @@ function registrar_eventos_post_type() {
     'hierarchical'          => false,
     'menu_position'         => 5,
     'menu_icon'             => 'dashicons-calendar',
-    'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' )
+    'supports'              => array( 'title', 'thumbnail', 'comments' )
   );
 
   // Registrar el Custom Post Type
@@ -41,3 +41,81 @@ function registrar_eventos_post_type() {
 
 }
 add_action( 'init', 'registrar_eventos_post_type' );
+
+function ocultar_agregar_nuevo_eventos() {
+    remove_submenu_page('edit.php?post_type=eventos', 'post-new.php?post_type=eventos');
+}
+add_action('admin_menu', 'ocultar_agregar_nuevo_eventos');
+
+ // Register custom post type actividades as child of eventos
+function actividades_custom_post_type() {
+    $labels = array(
+        'name'                  => 'Actividades',
+        'singular_name'         => 'Actividad',
+        'menu_name'             => 'Actividades',
+        'add_new'               => 'Agregar Nueva',
+        'add_new_item'          => 'Agregar Nueva Actividad',
+        'edit_item'             => 'Editar Actividad',
+        'new_item'              => 'Nueva Actividad',
+        'view_item'             => 'Ver Actividad',
+        'search_items'          => 'Buscar Actividades',
+        'not_found'             => 'No se encontraron actividades',
+        'not_found_in_trash'    => 'No se encontraron actividades en la papelera'
+    );
+
+    $args = array(
+        'labels'                => $labels,
+        'public'                => true,
+        'has_archive'           => true,
+        'menu_icon'             => 'dashicons-calendar-alt',
+        'supports'              => array( 'title', 'editor', 'thumbnail' ),
+        'rewrite'               => array( 'slug' => 'eventos/%eventos%/actividades', 'with_front' => false ),
+        'capability_type'       => 'post',
+        'hierarchical'          => true,
+        'menu_position'         => 5,
+        'show_in_rest'          => true,
+        'query_var'             => true,
+        'publicly_queryable'    => true,
+        'show_ui'               => true,
+        'show_in_menu'          => 'edit.php?post_type=eventos'
+    );
+    register_post_type( 'actividades', $args );
+}
+add_action( 'init', 'actividades_custom_post_type' );
+
+
+function crear_taxonomia_fechas() {
+    $labels = array(
+        'name' => _x('Fechas', 'taxonomy general name'),
+        'singular_name' => _x('Fecha', 'taxonomy singular name'),
+        'search_items' => __('Buscar Fechas'),
+        'all_items' => __('Todas las Fechas'),
+        'parent_item' => __('Fecha Padre'),
+        'parent_item_colon' => __('Fecha Padre:'),
+        'edit_item' => __('Editar Fecha'),
+        'update_item' => __('Actualizar Fecha'),
+        'add_new_item' => __('Agregar Nueva Fecha'),
+        'new_item_name' => __('Nombre Nueva Fecha'),
+        'menu_name' => __('Fechas'),
+    );
+
+    $args = array(
+        'hierarchical' => false,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'fechas'),
+    );
+
+    register_taxonomy('fechas', 'actividades', $args);
+}
+add_action('init', 'crear_taxonomia_fechas');
+
+function add_custom_script() {
+    $screen = get_current_screen();
+    if ( $screen->id =='actividades' ) {
+      wp_enqueue_script( 'custom-activity', get_stylesheet_directory_uri() . '/js/custom-activity.js', array('jquery', 'jquery-ui-datepicker'), '1.0', true );
+    }
+}
+add_action( 'admin_enqueue_scripts', 'add_custom_script', 99 );
