@@ -1,6 +1,7 @@
 <?php
 
-function crear_post_type_bitacora() {
+function crear_post_type_bitacora()
+{
     $labels = array(
         'name'               => 'Bitácora',
         'singular_name'      => 'Bitácora',
@@ -25,16 +26,16 @@ function crear_post_type_bitacora() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'bitacora' ),
+        'rewrite'            => array('slug' => 'bitacora'),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
-        'supports'           => array( 'title', 'author'),
+        'supports'           => array('title', 'author'),
         'menu_icon'          => 'dashicons-welcome-write-blog'
     );
 
-    register_post_type( 'bitacora', $args );
+    register_post_type('bitacora', $args);
 }
 
-add_action( 'init', 'crear_post_type_bitacora' );
+add_action('init', 'crear_post_type_bitacora');

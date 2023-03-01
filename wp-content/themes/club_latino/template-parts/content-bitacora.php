@@ -52,7 +52,13 @@ $page_id = $args["page_id"];
                         <label for="user_binnacle" class="title-p">Cédula de ciudadanía</label>
                     </div>
                     <input type="hidden" name="action" value="custom_binnacle_post">
-                    <input type="submit" name="submit" id="submit" class="btn btn-very btn-secondary btn-lg" value="Verificar" />
+                    <input type="submit" name="submit" id="submit" class="btn btn-very btn-secondary btn-lg" value="Registrar" />
+                </div>
+                <div id="box-obs" class="input-group mb-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" name="observacion" placeholder="Agrega tu observación" id="observacion" style="height: 100px"></textarea>
+                        <label for="observacion" class="title-p">Observación</label>
+                    </div>
                 </div>
                 <div class="input-group mb-3">
                     <div class="form-check">
@@ -198,123 +204,127 @@ $page_id = $args["page_id"];
                         </div>
                     </div>
                 </div>
-                <h2 class="text-center mb-4 mt-4 title-h1 title-binnacle">Listado de eventos</h2>
                 <?php
-                $events = $decoded_data["events"];
-                foreach ($events as $key => $e) {
+                if (!empty($events)) {
                 ?>
-                    <h2 class="text-center mb-4 title-h1-v2 title-events">Evento: <?= $e["name"] ?></h2>
-                    <p class="text-left mb-1 title-p">
-                        <strong>Organizador:</strong>
-                        <?= $e["organization"]["name"] ?>
-                    </p>
-                    <p class="text-left mb-1 title-p">
-                        <strong>Tipo Organizador:</strong>
-                        <?= strtoupper($e["organization"]["type"]) ?>
-                    </p>
-                    <p class="text-left mb-1 mt-3 title-p">
-                        <strong>Actividades a las que esta subscrito</strong>
-                    </p>
+                    <h2 class="text-center mb-4 mt-4 title-h1 title-binnacle">Listado de eventos</h2>
                     <?php
-                    if (isset($e["activity"]["activities_subscribe"]) && !empty($e["activity"]["activities_subscribe"])) {
+                    $events = $decoded_data["events"];
+                    foreach ($events as $key => $e) {
                     ?>
-                        <table class="table table-dark table-hover mt-4">
-                            <thead>
-                                <tr>
-                                    <th scope="col"># Id</th>
-                                    <th scope="col">Actividad</th>
-                                    <th scope="col">Descripción</th>
-                                    <th scope="col">Inicio</th>
-                                    <th scope="col">Fin</th>
-                                    <th scope="col">Ver</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($e["activity"]["activities_subscribe"] as $key => $activities_subscribe) {
-                                ?>
-                                    <tr class="table-active">
-                                        <th scope="row">
-                                            <span class="title-p"><?= $activities_subscribe["id"] ?></span>
-                                        </th>
-                                        <td>
-                                            <span class="title-p"><?= $activities_subscribe["title"] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="title-p"><?= $activities_subscribe["description"] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="title-p"><?= $activities_subscribe["hora_inicio"] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="title-p"><?= $activities_subscribe["hora_fin"] ?></span>
-                                        </td>
-                                        <td>
-                                            <a href="<?= $activities_subscribe["link"] ?>" target="_blank" class="link-light">
-                                                <span class="title-p">Detalle</span>
-                                            </a>
-                                        </td>
+                        <h2 class="text-center mb-4 title-h1-v2 title-events">Evento: <?= $e["name"] ?></h2>
+                        <p class="text-left mb-1 title-p">
+                            <strong>Organizador:</strong>
+                            <?= $e["organization"]["name"] ?>
+                        </p>
+                        <p class="text-left mb-1 title-p">
+                            <strong>Tipo Organizador:</strong>
+                            <?= strtoupper($e["organization"]["type"]) ?>
+                        </p>
+                        <p class="text-left mb-1 mt-3 title-p">
+                            <strong>Actividades a las que esta subscrito</strong>
+                        </p>
+                        <?php
+                        if (isset($e["activity"]["activities_subscribe"]) && !empty($e["activity"]["activities_subscribe"])) {
+                        ?>
+                            <table class="table table-dark table-hover mt-4">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"># Id</th>
+                                        <th scope="col">Actividad</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Inicio</th>
+                                        <th scope="col">Fin</th>
+                                        <th scope="col">Ver</th>
                                     </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    <?php
-                    }
-                    ?>
-                    <p class="text-left mb-1 mt-3 title-p">
-                        <strong>Actividades recomendadas</strong>
-                    </p>
-                    <?php
-                    if (isset($e["activity"]["activities_recomend"]) && !empty($e["activity"]["activities_recomend"])) {
-                    ?>
-                        <table class="table table-dark table-hover mt-4">
-                            <thead>
-                                <tr>
-                                    <th scope="col"># Id</th>
-                                    <th scope="col">Actividad</th>
-                                    <th scope="col">Descripción</th>
-                                    <th scope="col">Inicio</th>
-                                    <th scope="col">Fin</th>
-                                    <th scope="col">Ver</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($e["activity"]["activities_recomend"] as $key => $activities_recomend) {
-                                ?>
-                                    <tr class="table-active">
-                                        <th scope="row">
-                                            <span class="title-p"><?= $activities_recomend["id"] ?></span>
-                                        </th>
-                                        <td>
-                                            <span class="title-p"><?= $activities_recomend["title"] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="title-p"><?= $activities_recomend["description"] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="title-p"><?= $activities_recomend["hora_inicio"] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="title-p"><?= $activities_recomend["hora_fin"] ?></span>
-                                        </td>
-                                        <td>
-                                            <a href="<?= $activities_recomend["link"] ?>" target="_blank" class="link-light">
-                                                <span class="title-p">Detalle</span>
-                                            </a>
-                                        </td>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($e["activity"]["activities_subscribe"] as $key => $activities_subscribe) {
+                                    ?>
+                                        <tr class="table-active">
+                                            <th scope="row">
+                                                <span class="title-p"><?= $activities_subscribe["id"] ?></span>
+                                            </th>
+                                            <td>
+                                                <span class="title-p"><?= $activities_subscribe["title"] ?></span>
+                                            </td>
+                                            <td>
+                                                <span class="title-p"><?= $activities_subscribe["description"] ?></span>
+                                            </td>
+                                            <td>
+                                                <span class="title-p"><?= $activities_subscribe["hora_inicio"] ?></span>
+                                            </td>
+                                            <td>
+                                                <span class="title-p"><?= $activities_subscribe["hora_fin"] ?></span>
+                                            </td>
+                                            <td>
+                                                <a href="<?= $activities_subscribe["link"] ?>" target="_blank" class="link-light">
+                                                    <span class="title-p">Detalle</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        <?php
+                        }
+                        ?>
+                        <p class="text-left mb-1 mt-3 title-p">
+                            <strong>Actividades recomendadas</strong>
+                        </p>
+                        <?php
+                        if (isset($e["activity"]["activities_recomend"]) && !empty($e["activity"]["activities_recomend"])) {
+                        ?>
+                            <table class="table table-dark table-hover mt-4">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"># Id</th>
+                                        <th scope="col">Actividad</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Inicio</th>
+                                        <th scope="col">Fin</th>
+                                        <th scope="col">Ver</th>
                                     </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    <?php
-                    }
-                    ?>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($e["activity"]["activities_recomend"] as $key => $activities_recomend) {
+                                    ?>
+                                        <tr class="table-active">
+                                            <th scope="row">
+                                                <span class="title-p"><?= $activities_recomend["id"] ?></span>
+                                            </th>
+                                            <td>
+                                                <span class="title-p"><?= $activities_recomend["title"] ?></span>
+                                            </td>
+                                            <td>
+                                                <span class="title-p"><?= $activities_recomend["description"] ?></span>
+                                            </td>
+                                            <td>
+                                                <span class="title-p"><?= $activities_recomend["hora_inicio"] ?></span>
+                                            </td>
+                                            <td>
+                                                <span class="title-p"><?= $activities_recomend["hora_fin"] ?></span>
+                                            </td>
+                                            <td>
+                                                <a href="<?= $activities_recomend["link"] ?>" target="_blank" class="link-light">
+                                                    <span class="title-p">Detalle</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        <?php
+                        }
+                        ?>
                 <?php
+                    }
                 }
                 ?>
             </div>

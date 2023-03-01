@@ -1,0 +1,48 @@
+.card-register {
+    max-width: 800px;
+    box-shadow: 0px 0px 10px 0px var(--color-dark);
+    border: 2px solid var(--color-secondary);
+    background-color: #ffffffdb;
+}
+
+#registerform .form-floating input {
+    min-width: 420px;
+    border: 1px solid var(--color-secondary);
+}
+
+.title-register {
+    text-shadow: 1px 1px 1px var(--color-dark);
+}
+
+.card-register .btn-very:hover {
+    background-color: #fff;
+    font-weight: 800;
+    text-shadow: -1px 1px 0px #2c2c2c;
+}
+
+.alert-binnacle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.box-select-reg .select2-container {
+    width: 100% !important;
+}
+
+.box-select-reg .select2-container .selection .select2-selection.select2-selection--single {
+    height: 58px;
+    border: 1px solid var(--color-secondary);
+}
+
+.box-select-reg .select2-container .selection #select2-rol-container,
+.box-select-reg .select2-container .selection .select2-selection__arrow {
+    height: 58px;
+    display: flex;
+    align-items: center;
+}
+
+.box-select2-rol .box-select-reg {
+    max-width: 420px;
+    min-width: 420px;
+}

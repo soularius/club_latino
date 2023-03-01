@@ -42,6 +42,9 @@ function my_nav_menu_items_filter($items, $args)
             $menu_items = wp_get_nav_menu_items($menu->term_id);
             $menu_items_filtered = array_filter($menu_items, function ($item) use ($current_roles) {
                 $allowed_roles = get_post_meta($item->ID, '_allowed_roles', true);
+                if (!is_array($allowed_roles)) {
+                    $allowed_roles = ['all'];
+                }
 
                 if (empty($current_roles)) {
                     return in_array('all', $allowed_roles);

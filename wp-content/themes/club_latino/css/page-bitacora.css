@@ -1,8 +1,10 @@
 .card-binnacle {
     max-width: 800px;
+    max-height: 600px;
     box-shadow: 0px 0px 10px 0px var(--color-dark);
     border: 2px solid var(--color-secondary);
     background-color: #ffffffdb;
+    overflow-y: auto;
 }
 
 #binnacleform .form-floating input {
@@ -27,7 +29,6 @@
 }
 
 .box-events {
-    overflow-y: auto;
     max-height: 350px;
 }
 
@@ -49,4 +50,8 @@
     height: 40px;
     display: flex;
     align-items: center;
+}
+
+#box-obs textarea {
+    border: 1px solid var(--color-secondary);
 }

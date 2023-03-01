@@ -14,6 +14,7 @@ if (!defined('_S_VERSION')) {
 }
 
 get_template_part('lib/class', 'wp-bootstrap-navwalker');
+get_template_part('custom-requests/https', 'register');
 get_template_part('custom-requests/https', 'binnacle');
 get_template_part('custom-properties/add', 'config-login');
 get_template_part('custom-properties/add', 'permision-nav');
@@ -175,6 +176,10 @@ function club_latino_scripts()
 
 	if (is_page('registro-de-bitacora')) {
 		wp_enqueue_style('page_bitacora', get_template_directory_uri() . '/css/page-bitacora.css', array(), _S_VERSION);
+	}
+
+	if (is_page('registrar')) {
+		wp_enqueue_style('page_registrar', get_template_directory_uri() . '/css/page-registrar.css', array(), _S_VERSION);
 	}
 
 	wp_style_add_data('club_latino-style', 'rtl', 'replace');

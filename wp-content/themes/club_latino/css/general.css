@@ -111,3 +111,33 @@ body.page {
 .font-secondary {
   font-family: var(--font-secondary);
 }
+
+.alert-binnacle {
+  position: absolute;
+  z-index: 9;
+  top: 60px;
+  margin: 0 15px;
+  max-width: 1300px;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-secondary) #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+}

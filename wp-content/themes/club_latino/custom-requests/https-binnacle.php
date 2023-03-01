@@ -12,6 +12,7 @@ function custom_binnacle_post()
     $user_binnacle = sanitize_text_field($_POST['user_binnacle']);
     $is_inv = sanitize_text_field($_POST['is_guest']);
     $user_inv = sanitize_text_field($_POST['invitado']);
+    $observacion = sanitize_text_field($_POST['observacion']);
 
     // buscar usuario con el acf cedula_de_ciudadania igual a $user_binnacle
     $user_query = new WP_User_Query(array(
@@ -50,9 +51,9 @@ function custom_binnacle_post()
 
         $ans = false;
         if (array_search($basic["role"], ["socio", "particular", "visitante"]) !== false) {
-            $ans = register_binnade($user_id);
+            $ans = register_binnade($user_id, null, $observacion);
         } elseif (array_search($basic["role"], ["invitado"]) !== false && $is_inv && $user_inv) {
-            $ans = register_binnade($user_id, $user_inv);
+            $ans = register_binnade($user_id, $user_inv, $observacion);
         }
         if ($ans) {
             // Codificar los datos en la URL
@@ -69,7 +70,10 @@ function custom_binnacle_post()
     }
 }
 
-function register_binnade($user_id, $user_inv = null)
+add_action('admin_post_nopriv_custom_binnacle_post', 'custom_binnacle_post');
+add_action('admin_post_custom_binnacle_post', 'custom_binnacle_post');
+
+function register_binnade($user_id, $user_inv = null, $observacion)
 {
     $current_date = date('d/m/Y');
 
@@ -87,11 +91,11 @@ function register_binnade($user_id, $user_inv = null)
     } else {
         $post_id = $post_existente->ID;
     }
-    $ans = register_user_binnade($user_id, $post_id, $user_inv);
+    $ans = register_user_binnade($user_id, $post_id, $user_inv, $observacion);
     return $ans;
 }
 
-function register_user_binnade($user_id, $post_id, $user_inv)
+function register_user_binnade($user_id, $post_id, $user_inv, $observacion)
 {
     $listado_de_usuarios = get_field('listado_de_usuarios', $post_id);
     $hour_min = date('H:i');
@@ -101,6 +105,7 @@ function register_user_binnade($user_id, $post_id, $user_inv)
         'es_invitado' => false,
         'usuario' => $user_id,
         'hora_de_ingreso' => $hour_min,
+        'observacion' => $observacion,
     );
 
     if (!is_null($user_inv)) {
@@ -129,9 +134,6 @@ function custom_binnacle_form()
 }
 
 add_action('custom_binnacle_form', 'custom_binnacle_form');
-
-add_action('admin_post_nopriv_custom_binnacle_post', 'custom_binnacle_post');
-add_action('admin_post_custom_binnacle_post', 'custom_binnacle_post');
 
 function search_events_by_user($user_id, $group, $team)
 {

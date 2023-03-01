@@ -11,6 +11,9 @@ switch ($page_slug) {
     case "registro-de-bitacora":
         redirect_permision();
         break;
+    case "registrar":
+        redirect_permision();
+        break;
 }
 
 get_header();
@@ -32,6 +35,9 @@ $src_url = get_field("background_image", $page_id);
                     break;
                 case "registro-de-bitacora":
                     get_template_part('template-parts/content', 'bitacora', array('page_id' => $page_id));
+                    break;
+                case "registrar":
+                    get_template_part('template-parts/content', 'registrar', array('page_id' => $page_id));
                     break;
             }
             ?>
