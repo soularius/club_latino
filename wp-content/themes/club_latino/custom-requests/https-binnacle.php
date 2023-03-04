@@ -135,7 +135,7 @@ function custom_binnacle_form()
 
 add_action('custom_binnacle_form', 'custom_binnacle_form');
 
-function search_events_by_user($user_id, $group, $team)
+function search_events_by_user($user_id, $group, $team, $compare = '=')
 {
     $current_date = date('Ymd');
     $args = array(
@@ -146,7 +146,7 @@ function search_events_by_user($user_id, $group, $team)
             array(
                 'key' => 'fecha_del_evento',
                 'value' => $current_date,
-                'compare' => '='
+                'compare' => $compare
             )
         )
     );
@@ -339,6 +339,7 @@ function search_data_acf_user($user_id)
     $acf_data["fecha_inicio"] = get_field('fecha_inicio', $post_id);
     $acf_data["fecha_vencimiento"] = get_field('fecha_vencimiento', $post_id);
     $acf_data["costo_mensual"] = get_field('costo_mensual', $post_id);
+    $acf_data["telefono"] = get_field('telefono', $post_id);
 
     return $acf_data;
 }

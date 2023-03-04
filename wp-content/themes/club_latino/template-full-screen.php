@@ -14,6 +14,15 @@ switch ($page_slug) {
     case "registrar":
         redirect_permision();
         break;
+    case "perfil":
+        verify_login();
+        break;
+    case "evento":
+        verify_login();
+        break;
+    case "actividad":
+        verify_login();
+        break;
 }
 
 get_header();
@@ -38,6 +47,15 @@ $src_url = get_field("background_image", $page_id);
                     break;
                 case "registrar":
                     get_template_part('template-parts/content', 'registrar', array('page_id' => $page_id));
+                    break;
+                case "perfil":
+                    get_template_part('template-parts/content', 'perfil', array('page_id' => $page_id));
+                    break;
+                case "evento":
+                    get_template_part('template-parts/content', 'evento', array('page_id' => $page_id));
+                    break;
+                case "actividad":
+                    get_template_part('template-parts/content', 'actividad', array('page_id' => $page_id));
                     break;
             }
             ?>

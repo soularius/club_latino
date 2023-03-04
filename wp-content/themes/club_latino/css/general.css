@@ -76,6 +76,15 @@ body.page {
   color: var(--color-secondary) !important;
 }
 
+.site-cl .btn-secondary-light {
+  background-color: transparent;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary) !important;
+  border-width: 2px;
+  font-weight: 600;
+  border-style: solid;
+}
+
 .site-cl .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-form-control-bg);
@@ -112,6 +121,14 @@ body.page {
   font-family: var(--font-secondary);
 }
 
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
 .alert-binnacle {
   position: absolute;
   z-index: 9;
@@ -140,4 +157,10 @@ body.page {
   background-color: var(--color-secondary);
   border-radius: 10px;
   border: 1px solid #ffffff;
+}
+
+.alert-binnacle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

@@ -16,6 +16,7 @@ if (!defined('_S_VERSION')) {
 get_template_part('lib/class', 'wp-bootstrap-navwalker');
 get_template_part('custom-requests/https', 'register');
 get_template_part('custom-requests/https', 'binnacle');
+get_template_part('custom-requests/https', 'send-event');
 get_template_part('custom-properties/add', 'config-login');
 get_template_part('custom-properties/add', 'permision-nav');
 get_template_part('custom-properties/add', 'roles-users');
@@ -155,12 +156,18 @@ add_action('widgets_init', 'club_latino_widgets_init');
  */
 function club_latino_scripts()
 {
+	wp_enqueue_script('jquery_custom', get_template_directory_uri() . '/js/jquery.min.js', array(), _S_VERSION, false);
+
 	wp_enqueue_style('club_latino-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_enqueue_style('all_fonts', get_template_directory_uri() . '/css/fonts.css', array(), _S_VERSION);
 	wp_enqueue_style('vars', get_template_directory_uri() . '/css/vars.css', array(), _S_VERSION);
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), _S_VERSION);
 	wp_enqueue_style('nav_bar', get_template_directory_uri() . '/css/nav-bar.css', array(), _S_VERSION);
 	wp_enqueue_style('general', get_template_directory_uri() . '/css/general.css', array(), _S_VERSION);
+
+
+	wp_enqueue_style('select2', get_template_directory_uri() . '/css/select2.min.css', array(), _S_VERSION);
+	wp_enqueue_script('select2', get_template_directory_uri() . '/js/select2.min.js', array(), _S_VERSION, true);
 
 	if (is_page_template('template-full-screen.php')) {
 		wp_enqueue_style('template_full_screen', get_template_directory_uri() . '/css/template-full-screen.css', array(), _S_VERSION);
@@ -182,6 +189,14 @@ function club_latino_scripts()
 		wp_enqueue_style('page_registrar', get_template_directory_uri() . '/css/page-registrar.css', array(), _S_VERSION);
 	}
 
+	if (is_page('perfil')) {
+		wp_enqueue_style('page_perfil', get_template_directory_uri() . '/css/page-perfil.css', array(), _S_VERSION);
+	}
+
+	if (is_page('actividad') || is_page('evento')) {
+		wp_enqueue_style('page_event_activity', get_template_directory_uri() . '/css/page-event-activity.css', array(), _S_VERSION);
+	}
+
 	wp_style_add_data('club_latino-style', 'rtl', 'replace');
 
 	wp_enqueue_script('club_latino-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -190,9 +205,6 @@ function club_latino_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
-
-	wp_enqueue_style('select2', get_template_directory_uri() . '/css/select2.min.css', array(), _S_VERSION);
-	wp_enqueue_script('select2', get_template_directory_uri() . '/js/select2.min.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'club_latino_scripts');
 

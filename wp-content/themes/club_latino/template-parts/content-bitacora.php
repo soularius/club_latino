@@ -259,7 +259,7 @@ $page_id = $args["page_id"];
                                                 <span class="title-p"><?= $activities_subscribe["hora_fin"] ?></span>
                                             </td>
                                             <td>
-                                                <a href="<?= $activities_subscribe["link"] ?>" target="_blank" class="link-light">
+                                                <a href="<?= home_url('/actividad/?id=' . $activities_subscribe["id"]) ?>" target="_blank" class="link-light">
                                                     <span class="title-p">Detalle</span>
                                                 </a>
                                             </td>
@@ -310,7 +310,7 @@ $page_id = $args["page_id"];
                                                 <span class="title-p"><?= $activities_recomend["hora_fin"] ?></span>
                                             </td>
                                             <td>
-                                                <a href="<?= $activities_recomend["link"] ?>" target="_blank" class="link-light">
+                                                <a href="<?= home_url('/actividad/?id=' . $activities_recomend["id"]) ?>" target="_blank" class="link-light">
                                                     <span class="title-p">Detalle</span>
                                                 </a>
                                             </td>

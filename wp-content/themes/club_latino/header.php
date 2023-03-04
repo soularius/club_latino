@@ -71,7 +71,7 @@
 							<?php
 							} else {
 							?>
-								<li><a class="dropdown-item font-primary" href="#">Mi Perfil</a></li>
+								<li><a class="dropdown-item font-primary" href="<?= get_url_by_slug("perfil") ?>">Mi Perfil</a></li>
 								<li><a class="dropdown-item font-primary" href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a></li>
 							<?php
 							}

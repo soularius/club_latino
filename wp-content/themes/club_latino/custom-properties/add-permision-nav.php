@@ -92,3 +92,20 @@ function redirect_permision()
         exit;
     }
 }
+
+function verify_login()
+{
+    if (!is_user_logged_in()) {
+        ob_start();
+        $url = get_url_by_slug("iniciar-sesion");
+        wp_redirect($url);
+        ob_end_flush();
+        exit;
+    }
+}
+
+function get_url_by_slug($slug)
+{
+    $page = get_page_by_path($slug);
+    return get_permalink($page);
+}

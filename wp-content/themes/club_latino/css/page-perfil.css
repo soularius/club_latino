@@ -1,0 +1,55 @@
+#v-pills-tab {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.title-profile {
+    text-shadow: 1px 1px 1px var(--color-dark);
+}
+
+.btn-profile {
+    margin-bottom: 15px;
+}
+
+.btn-profile.active {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary);
+    color: var(--color-light) !important;
+}
+
+.card-profile {
+    max-width: 1000px;
+    width: 100%;
+    max-height: 600px;
+    min-height: 600px;
+    box-shadow: 0px 0px 10px 0px var(--color-dark);
+    border: 2px solid var(--color-secondary);
+    background-color: #ffffffdb;
+    overflow-y: auto;
+}
+
+#eventform .form-floating input {
+    min-width: 420px;
+    border: 1px solid var(--color-secondary);
+}
+
+.box-select-inv .select2-container {
+    width: 100% !important;
+}
+
+.box-select-inv .select2-container .selection .select2-selection.select2-selection--single {
+    height: 58px;
+    border: 1px solid var(--color-secondary);
+}
+
+.box-select-inv .select2-container .selection #select2-team-container,
+.box-select-inv .select2-container .selection .select2-selection__arrow {
+    height: 58px;
+    display: flex;
+    align-items: center;
+}
+
+#box-obs textarea {
+    border: 1px solid var(--color-secondary);
+}
