@@ -27,7 +27,7 @@ define('DB_NAME', 'freedb_clublatino');
 define('DB_USER', 'freedb_root_clublatino');
 
 /** Database password */
-define('DB_PASSWORD', 'TEPZP58z&ZKsg5w');
+define('DB_PASSWORD', 'PYW5ejWM*4Vv#d3');
 
 /** Database hostname */
 define('DB_HOST', 'sql.freedb.tech');
