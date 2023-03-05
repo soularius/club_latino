@@ -1,6 +1,6 @@
 <?php
 
-function disable_user_registration() {
+/* function disable_user_registration() {
    return false;
 }
 add_filter('registration_enabled', 'disable_user_registration');
@@ -39,4 +39,4 @@ function remove_admin_bar() {
         show_admin_bar( false );
     }
 }
-add_action( 'after_setup_theme', 'remove_admin_bar' );
+add_action( 'after_setup_theme', 'remove_admin_bar' ); */
