@@ -30,7 +30,8 @@ define('DB_USER', 'root_clublatino');
 define('DB_PASSWORD', '123456789*');
 
 /** Database hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db4free.net');
+define('DB_PORT', 3306);
 
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
