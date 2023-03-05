@@ -1,0 +1,11 @@
+### WordPress ###
+# Core
+#
+# Note: if you want to stage/commit WP core files
+# you can delete this whole section/until Configuration.
+
+# Configuration
+wp-config.php
+
+# Log files
+*.log
