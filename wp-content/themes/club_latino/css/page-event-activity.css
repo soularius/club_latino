@@ -1,4 +1,22 @@
 .badge-p {
     position: absolute;
     right: 0;
+    top: 0;
+}
+
+.card-event .card-body {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.card-event .box-img {
+    display: flex;
+    max-height: 250px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-activity {
+    text-shadow: 1px 1px 1px var(--color-dark);
 }

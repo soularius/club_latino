@@ -33,7 +33,7 @@
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a class="navbar-brand" href="#">Club Latino</a>
+					<a class="navbar-brand text-light" href="<?= home_url() ?>">Club Latino</a>
 					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 						<?php
 						$current_user = wp_get_current_user();
@@ -67,12 +67,12 @@
 									$page_url_login = get_permalink($page->ID);
 								}
 							?>
-								<li><a class="dropdown-item font-primary" href="<?= $page_url_login ?>">Iniciar Sesión</a></li>
+								<li><a class="dropdown-item font-primary text-light" href="<?= $page_url_login ?>">Iniciar Sesión</a></li>
 							<?php
 							} else {
 							?>
-								<li><a class="dropdown-item font-primary" href="<?= get_url_by_slug("perfil") ?>">Mi Perfil</a></li>
-								<li><a class="dropdown-item font-primary" href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a></li>
+								<li><a class="dropdown-item font-primary text-light" href="<?= get_url_by_slug("perfil") ?>">Mi Perfil</a></li>
+								<li><a class="dropdown-item font-primary text-light" href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a></li>
 							<?php
 							}
 							?>

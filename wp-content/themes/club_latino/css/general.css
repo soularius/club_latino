@@ -164,3 +164,21 @@ body.page {
   justify-content: flex-start;
   align-items: center;
 }
+
+.title-events .url-event {
+  margin-left: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-events .url-event:hover span {
+  color: var(--color-secondary) !important;
+}
+
+.title-events {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

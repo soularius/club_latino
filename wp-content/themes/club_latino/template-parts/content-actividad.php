@@ -14,7 +14,7 @@ if (!$post_ || get_post_type($actividad_id) != "actividades") {
 <?php
 } else {
 ?>
-    <div class="card card-binnacle p-0" style="width: 500px;">
+    <div class="card card-binnacle p-0 card-activity" style="width: 500px;">
         <?php
         if (has_post_thumbnail($actividad_id)) {
             $image_url =  get_the_post_thumbnail_url($actividad_id, 'medium');

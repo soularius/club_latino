@@ -163,7 +163,15 @@
             <?php
             foreach ($events as $key => $e) {
             ?>
-                <h2 class="text-center mb-4 title-h1-v2 title-events">Evento: <?= $e["name"] ?></h2>
+                <h2 class="text-center mb-4 title-h1-v2 title-events">
+                    Evento: <?= $e["name"] ?>
+
+                    <a href="<?= home_url('/evento/?id=' . $e["id"]) ?>" target="_blank" class="color-primary url-event">
+                        <span class="material-symbols-outlined material-icons color-primary">
+                            visibility
+                        </span>
+                    </a>
+                </h2>
                 <p class="text-left mb-1 title-p">
                     <strong>Organizador:</strong>
                     <?= $e["organization"]["name"] ?>

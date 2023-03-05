@@ -17,6 +17,7 @@ get_template_part('lib/class', 'wp-bootstrap-navwalker');
 get_template_part('custom-requests/https', 'register');
 get_template_part('custom-requests/https', 'binnacle');
 get_template_part('custom-requests/https', 'send-event');
+get_template_part('custom-requests/https', 'send-contact');
 get_template_part('custom-properties/add', 'config-login');
 get_template_part('custom-properties/add', 'permision-nav');
 get_template_part('custom-properties/add', 'roles-users');
@@ -191,6 +192,10 @@ function club_latino_scripts()
 
 	if (is_page('perfil')) {
 		wp_enqueue_style('page_perfil', get_template_directory_uri() . '/css/page-perfil.css', array(), _S_VERSION);
+	}
+
+	if (is_page('contactenos')) {
+		wp_enqueue_style('page_contactenos', get_template_directory_uri() . '/css/page-contactenos.css', array(), _S_VERSION);
 	}
 
 	if (is_page('actividad') || is_page('evento')) {

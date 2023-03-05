@@ -57,6 +57,9 @@ $src_url = get_field("background_image", $page_id);
                 case "actividad":
                     get_template_part('template-parts/content', 'actividad', array('page_id' => $page_id));
                     break;
+                case "contactenos":
+                    get_template_part('template-parts/content', 'contactenos', array('page_id' => $page_id));
+                    break;
             }
             ?>
         </div>
