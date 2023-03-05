@@ -21,16 +21,16 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'clublatino');
+define('DB_NAME', 'freedb_clublatino');
 
 /** Database username */
-define('DB_USER', 'root_clublatino');
+define('DB_USER', 'freedb_root_clublatino');
 
 /** Database password */
-define('DB_PASSWORD', '123456789*');
+define('DB_PASSWORD', 'ny*ZG$GvsTr3%CN');
 
 /** Database hostname */
-define('DB_HOST', 'db4free.net');
+define('DB_HOST', 'sql.freedb.tech');
 define('DB_PORT', 3306);
 
 /** Database charset to use in creating database tables. */
