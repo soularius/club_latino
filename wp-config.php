@@ -30,7 +30,7 @@ define('DB_USER', 'root_clublatino');
 define('DB_PASSWORD', '123456789*');
 
 /** Database hostname */
-define('DB_HOST', 'sql10.freemysqlhosting.net');
+define('DB_HOST', 'db4free.net');
 define('DB_PORT', 3306);
 
 /** Database charset to use in creating database tables. */
