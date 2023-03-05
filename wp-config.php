@@ -31,7 +31,6 @@ define('DB_PASSWORD', 'AVNS_Fjv7Pd1VA7J2L9ueBTQ');
 
 /** Database hostname */
 define('DB_HOST', 'db-mysql-nyc1-08363-do-user-8886421-0.b.db.ondigitalocean.com:25060');
-define('DB_PORT', 25060);
 
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
