@@ -18,6 +18,7 @@ get_template_part('custom-requests/https', 'register');
 get_template_part('custom-requests/https', 'binnacle');
 get_template_part('custom-requests/https', 'send-event');
 get_template_part('custom-requests/https', 'send-contact');
+get_template_part('custom-properties/add', 'send-event-mail');
 get_template_part('custom-properties/add', 'config-login');
 get_template_part('custom-properties/add', 'permision-nav');
 get_template_part('custom-properties/add', 'roles-users');

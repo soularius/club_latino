@@ -160,6 +160,7 @@ function search_events_by_user($user_id, $group, $team, $compare = '=')
             $query->the_post();
             $event_id = get_the_id();
             $list_activity = get_field("listado_de_actividades", $event_id);
+            $fecha = get_field("fecha_del_evento", $event_id);
             $format_activities = list_activities($list_activity, $user_id, $group, $team);
 
             if (!empty($format_activities)) {
@@ -170,6 +171,7 @@ function search_events_by_user($user_id, $group, $team, $compare = '=')
                 $event["id"] = $event_id;
                 $event["name"] = $event_name;
                 $event["organization"] = $organizacion;
+                $event["fecha"] = $fecha;
                 $event["activity"] = $format_activities;
                 array_push($events, $event);
             }

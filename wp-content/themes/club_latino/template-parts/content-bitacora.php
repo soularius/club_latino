@@ -229,12 +229,19 @@ $page_id = $args["page_id"];
                             <strong>Tipo Organizador:</strong>
                             <?= strtoupper($e["organization"]["type"]) ?>
                         </p>
-                        <p class="text-left mb-1 mt-3 title-p">
-                            <strong>Actividades a las que esta subscrito</strong>
+                        <p class="text-left mb-1 title-p">
+                            <strong>Fecha:</strong>
+                            <?php
+                            $newDate = date("d/m/Y", strtotime($e["fecha"]));
+                            ?>
+                            <?= $newDate ?>
                         </p>
                         <?php
                         if (isset($e["activity"]["activities_subscribe"]) && !empty($e["activity"]["activities_subscribe"])) {
                         ?>
+                            <p class="text-left mb-1 mt-3 title-p">
+                                <strong>Actividades a las que esta subscrito</strong>
+                            </p>
                             <table class="table table-dark table-hover mt-4">
                                 <thead>
                                     <tr>

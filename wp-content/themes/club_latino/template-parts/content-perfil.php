@@ -180,6 +180,13 @@
                     <strong>Tipo Organizador:</strong>
                     <?= strtoupper($e["organization"]["type"]) ?>
                 </p>
+                <p class="text-left mb-1 title-p">
+                    <strong>Fecha:</strong>
+                    <?php
+                    $newDate = date("d/m/Y", strtotime($e["fecha"]));
+                    ?>
+                    <?= $newDate ?>
+                </p>
                 <?php
                 if (isset($e["activity"]["activities_subscribe"]) && !empty($e["activity"]["activities_subscribe"])) {
                 ?>
