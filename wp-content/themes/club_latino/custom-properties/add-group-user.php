@@ -18,11 +18,12 @@ function registrar_taxonomia_grupos() {
 
     $args = array(
         'labels' => $labels,
-        'hierarchical' => true,
+        'hierarchical' => false,
         'show_ui' => true,
         'show_admin_column' => true,
         'query_var' => true,
         'rewrite' => array( 'slug' => 'grupo' ),
+        'object_type' => array( 'user' )
     );
 
     register_taxonomy( 'grupo', array('user'), $args );
@@ -85,7 +86,8 @@ function cb_edit_user_group_section( $user ) {
   }
 
   /* Get the terms of the 'grupo' taxonomy. */
-  $terms = get_terms( 'grupo', array( 'hide_empty' => false ) ); ?>
+  $terms = get_terms( 'grupo', array( 'hide_empty' => false ) );
+  ?>
   <div id="section-group">
     <h3><?php _e( 'Grupos' ); ?></h3>
 
@@ -147,13 +149,18 @@ function cb_custom_form_field( $name, $options, $userId, $type = 'checkbox') {
       }
   
       // get all terms linked with the user
-      $usrTerms = get_the_terms( $userId, 'grupo');
+      $usrTerms = get_terms( array(
+          'taxonomy' => 'grupo',
+          'object_ids' => $userId,
+      ) );
+
       $usrTermsArr = [];
       if(!empty($usrTerms)) {
         foreach ( $usrTerms as $term ) {
           $usrTermsArr[] = (int) $term->term_id;
         }
       }
+
       // Dropdown
       echo "<select name='{$name}' class='select2'>";
       echo "<option value=''>-Seleccionar-</option>";
@@ -189,11 +196,9 @@ function cb_save_user_groups_terms( $user_id ) {
   }
 
   $term = $_POST['grupos'];
-  $terms = is_array($term) ? $term : (int) $term; // fix for checkbox and select input field
-
+  $terms = is_array($term) ? $term : [(int) $term]; // fix for checkbox and select input field
   /* Sets the terms (we're just using a single term) for the user. */
-  wp_set_object_terms( $user_id, $terms, 'grupo', false);
-
+  $t = wp_set_object_terms( $user_id, $terms, 'grupo', false);
   clean_object_term_cache( $user_id, 'grupo' );
 }
 

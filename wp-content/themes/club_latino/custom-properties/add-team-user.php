@@ -170,7 +170,11 @@ function cb_custom_team_form_field( $name, $options, $userId, $type = 'checkbox'
       }
 
       // get all terms linked with the user
-      $usrTerms = get_the_terms( $userId, 'equipo');
+      //$usrTerms = get_the_terms( $userId, 'equipo');
+      $usrTerms = get_terms( array(
+          'taxonomy' => 'equipo',
+          'object_ids' => $userId,
+      ) );
       $usrTermsArr = [];
       if(!empty($usrTerms)) {
         foreach ( $usrTerms as $term ) {
