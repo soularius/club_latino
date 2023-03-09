@@ -29,7 +29,7 @@ if (!$post_ || get_post_type($evento_id) != "eventos") {
         $organizacion = get_information_event($tipo_de_organizador['value'], $evento_id);
         ?>
         <div class="card-body">
-            <h1 class="text-center mb-1 title-h1 title-activity card-title"><?= get_the_title($evento_id) ?></h1>
+            <h1 class="text-center mb-1 title-h1-registre  card-title"><?= get_the_title($evento_id) ?></h1>
             <h2 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Hora Inicio</h2>
             <p class="title-p">
                 <?= get_field("hora_inicio", $evento_id) ?>
@@ -46,7 +46,7 @@ if (!$post_ || get_post_type($evento_id) != "eventos") {
             </p>
             <h2 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Actividades</h2>
             <?php $all_activity = get_all_activitys($evento_id) ?>
-            <table class="table table-dark table-hover mt-4">
+            <table class="table table-light table-hover mt-4">
                 <thead>
                     <tr>
                         <th scope="col"># Id</th>
@@ -79,7 +79,7 @@ if (!$post_ || get_post_type($evento_id) != "eventos") {
                             </td>
                             <td>
                                 <a href="<?= home_url('/actividad/?id=' . $activity_event["id"]) ?>" target="_blank" class="link-light">
-                                    <span class="title-p">Detalle</span>
+                                    <span class="title-detalle">Detalle</span>
                                 </a>
                             </td>
                         </tr>

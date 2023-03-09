@@ -41,7 +41,8 @@
 }
 
 .navbar-brand {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
+  font-weight: 700;
 }
 
 #masthead .btn-user-info {

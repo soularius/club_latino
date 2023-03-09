@@ -21,7 +21,7 @@ if (isset($_GET['envio']) && $_GET['envio'] == 'success') {
 <div class="card card-contact px-4 py-2">
     <div class="card-body">
         <div class="contact-form">
-            <h1 class="text-center mb-4 title-h1 title-contact">Contáctenos</h1>
+            <h1 class="text-center mb-4 title-h1-registre title-contact">Contáctenos</h1>
             <form name="contactform" id="contactform" class="d-flex flex-column justify-content-center align-items-center" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
                 <div class="form-floating mb-3 w-100">
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="000-0000-000">

@@ -27,16 +27,16 @@ if (!$post_ || get_post_type($actividad_id) != "actividades") {
         }
         ?>
         <div class="card-body">
-            <h1 class="text-center mb-1 title-h1 title-activity card-title"><?= get_the_title($actividad_id) ?></h1>
-            <h2 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Descripción</h2>
+            <h1 class="text-center mb-1 title-h1 card-title"><?= get_the_title($actividad_id) ?></h1>
+            <h4 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Descripción:</h4>
             <p class="title-p">
                 <?= get_the_excerpt($actividad_id) ?>
             </p>
-            <h2 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Hora Inicio</h2>
+            <h4 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Hora Inicio:</h4>
             <p class="title-p">
                 <?= get_field("hora_inicio", $actividad_id) ?>
             </p>
-            <h2 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Hora Fin</h2>
+            <h4 class="text-left mb-2 title-h2 fw-bold fs-5 subtitle-activity">Hora Fin:</h4>
             <p class="title-p">
                 <?= get_field("hora_fin", $actividad_id) ?>
             </p>
