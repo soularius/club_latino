@@ -167,9 +167,11 @@ function club_latino_scripts()
 	wp_enqueue_style('nav_bar', get_template_directory_uri() . '/css/nav-bar.css', array(), _S_VERSION);
 	wp_enqueue_style('general', get_template_directory_uri() . '/css/general.css', array(), _S_VERSION);
 
-
 	wp_enqueue_style('select2', get_template_directory_uri() . '/css/select2.min.css', array(), _S_VERSION);
-	wp_enqueue_script('select2', get_template_directory_uri() . '/js/select2.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('select2', get_template_directory_uri() . '/js/select2.min.js', array(), _S_VERSION, false);
+
+	wp_enqueue_script('club_latino-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, false);
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array(), _S_VERSION, false);
 
 	if (is_page_template('template-full-screen.php')) {
 		wp_enqueue_style('template_full_screen', get_template_directory_uri() . '/css/template-full-screen.css', array(), _S_VERSION);
@@ -204,9 +206,6 @@ function club_latino_scripts()
 	}
 
 	wp_style_add_data('club_latino-style', 'rtl', 'replace');
-
-	wp_enqueue_script('club_latino-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array(), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');

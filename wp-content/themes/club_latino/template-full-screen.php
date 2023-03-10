@@ -66,4 +66,4 @@ $src_url = get_field("background_image", $page_id);
     </div>
 </main>
 
-<?php /* get_footer(); */ ?>
+<?php get_footer(); ?>

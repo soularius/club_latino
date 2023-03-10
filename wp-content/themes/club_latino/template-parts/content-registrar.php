@@ -101,7 +101,7 @@ $roles = array(
                     }
                     ?>
                     <script>
-                        jQuery(document).ready(function($) {
+                        document.addEventListener("DOMContentLoaded", function() {
                             $('#rol').select2({
                                 minimumInputLength: 1
                             });

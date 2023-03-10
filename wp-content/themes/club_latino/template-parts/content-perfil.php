@@ -277,7 +277,7 @@
                                     </td>
                                     <td>
                                         <a href="<?= home_url('/actividad/?id=' . $activities_recomend["id"]) ?>" target="_blank" class="link-light">
-                                            <span class="title-p">Detalle</span>
+                                            <span class="title-p title-detalle-recomend">Detalle</span>
                                         </a>
                                     </td>
                                 </tr>

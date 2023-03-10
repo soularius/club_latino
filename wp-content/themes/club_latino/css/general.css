@@ -149,7 +149,11 @@ body.page {
 
 .site-cl .title-detalle {
   font-family: var(--font-primary);
-  color: var(--color-dark-gray);
+  color: var(--color-light);
+}
+
+.site-cl .title-detalle-recomend {
+  color: var(--color-primary);
 }
 
 .font-primary {

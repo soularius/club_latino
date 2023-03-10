@@ -3,10 +3,10 @@
     justify-content: center;
     align-items: center;
     min-width: 100%;
-    height: calc(100vh - 56px);
+    height: calc(100vh - 121px);
     background-size: cover;
 }
 
 .admin-bar #page-init {
-    height: calc(100vh - 88px);
+    height: calc(100vh - 153px);
 }

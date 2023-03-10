@@ -33,7 +33,13 @@
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a class="navbar-brand text-dark" href="<?= home_url() ?>"><img src="http://localhost/club-latino/wp-content/uploads/2023/03/Mi_proyecto-removebg-preview-e1678264376988.png" higt="70px" width="70px" /></a>
+					<?php
+					$custom_logo_id = get_theme_mod('custom_logo');
+					$custom_logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
+					?>
+					<a class="navbar-brand text-dark" href="<?= home_url() ?>">
+						<img src="<?= $custom_logo_url ?>" higt="70px" width="70px" />
+					</a>
 					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 						<?php
 						$current_user = wp_get_current_user();

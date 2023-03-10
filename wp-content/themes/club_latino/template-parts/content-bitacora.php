@@ -98,7 +98,7 @@ $page_id = $args["page_id"];
                         }
                         ?>
                         <script>
-                            jQuery(document).ready(function($) {
+                            document.addEventListener("DOMContentLoaded", function() {
                                 $('#invitado').select2({
                                     minimumInputLength: 1
                                 });
