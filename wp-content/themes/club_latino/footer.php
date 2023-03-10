@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -12,24 +13,16 @@
 ?>
 
 <footer id="colophon" class="site-footer">
-
-<?php /* get_sidebar( 'footer' ); */ ?>
-
-<div class="site-info">
-	<?php /* do_action( 'twentyfourteen_credits' ); */ ?>
-	<?php
-	if ( function_exists( 'the_privacy_policy_link' ) ) {
-		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-	}
-	?>
-	<div >
-	
-	</div>
-</div><!-- .site-info -->
+	<?php if (is_active_sidebar('footer-widget-area')) : ?>
+		<div class="footer-widget-area">
+			<?php dynamic_sidebar('footer-widget-area'); ?>
+		</div>
+	<?php endif; ?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

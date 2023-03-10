@@ -1,22 +1,29 @@
 .badge-p {
     position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.card-event .card-body {
-    overflow-y: auto;
-    max-height: 300px;
+    right: 10px;
+    top: 10px;
 }
 
 .card-event .box-img {
     display: flex;
     max-height: 250px;
+    height: 250px;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    min-height: 250px;
 }
 
-/* .title-activity {
-    text-shadow: 1px 1px 1px var(--color-dark);
-} */
+.card-event, .card-activity {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.site-cl .title-detalle-event {
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+}
+
+.site-cl .table-light th {
+  min-width: 100px;
+}

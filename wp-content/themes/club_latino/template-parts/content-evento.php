@@ -14,7 +14,7 @@ if (!$post_ || get_post_type($evento_id) != "eventos") {
 <?php
 } else {
 ?>
-    <div class="card card-binnacle p-0 card-event" style="width: 800px;">
+    <div class="card card-binnacle p-0 card-event" style="width: 900px;">
         <?php
         if (has_post_thumbnail($evento_id)) {
             $image_url =  get_the_post_thumbnail_url($evento_id, 'large');
@@ -78,8 +78,8 @@ if (!$post_ || get_post_type($evento_id) != "eventos") {
                                 <span class="title-p"><?= $activity_event["hora_fin"] ?></span>
                             </td>
                             <td>
-                                <a href="<?= home_url('/actividad/?id=' . $activity_event["id"]) ?>" target="_blank" class="link-light">
-                                    <span class="title-detalle">Detalle</span>
+                                <a href="<?= home_url('/actividad/?id=' . $activity_event["id"]) ?>" target="_blank" class="link-dark">
+                                    <span class="title-detalle-event">Detalle</span>
                                 </a>
                             </td>
                         </tr>

@@ -1,5 +1,5 @@
 .card-binnacle {
-    max-width: 800px;
+    max-width: 1000px;
     max-height: 600px;
     box-shadow: 0px 0px 10px 0px var(--color-gray-light);
     /* border: 2px solid var(--color-secondary); */
@@ -28,10 +28,6 @@
     align-items: center;
 }
 
-.box-events {
-    max-height: 350px;
-}
-
 .title-events {
     text-shadow: -1px 1px 0px #2c2c2c;
 }
@@ -52,6 +48,6 @@
     align-items: center;
 }
 
-/* #box-obs textarea {
-    border: 1px solid var(--color-secondary);
-} */
+.site-cl .table-dark th {
+  min-width: 100px;
+}

@@ -27,6 +27,7 @@ get_template_part('custom-properties/add', 'group-user');
 get_template_part('custom-properties/add', 'team-user');
 get_template_part('custom-properties/add', 'cpt-events');
 get_template_part('custom-properties/add', 'cpt-binnacle');
+get_template_part('custom-properties/add', 'widgets-footer');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

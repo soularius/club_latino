@@ -225,3 +225,7 @@ body.page {
   justify-content: center;
   align-items: center;
 }
+
+.footer-widget-area .wp-block-social-links {
+  margin-bottom: 10px;
+}
