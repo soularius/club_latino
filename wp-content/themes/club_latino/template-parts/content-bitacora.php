@@ -44,7 +44,7 @@ $page_id = $args["page_id"];
 <div class="card card-binnacle px-4 py-2">
     <div class="card-body">
         <div class="binnacle-form">
-            <h1 class="text-center mb-4 title-h1 title-binnacle"><?= get_the_title($page_id) ?></h1>
+            <h1 class="text-center mb-4 title-h1-registre"><?= get_the_title($page_id) ?></h1>
             <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" id="binnacleform" class="d-flex flex-column justify-content-center align-items-center">
                 <div class="input-group mb-3">
                     <div class="form-floating">

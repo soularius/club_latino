@@ -7,15 +7,33 @@ body.page {
 }
 
 .site-cl .title-h1 {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   color: var(--color-secondary);
   font-weight: bold;
 }
 
-.site-cl .title-h1-v2 {
-  font-family: var(--font-secondary);
-  color: var(--color-primary);
+.title-h1-registre {
+  font-family: var(--font-primary);
+  color: var(--color-dark-gray);
+  font-weight: 600;
+}
+
+.site-cl .title-homeh1 {
+  font-family: var(--font-primary);
+  color: var(--color-titulo);
   font-weight: bold;
+}
+
+.site-cl .title-homeh2 {
+  font-family: var(--font-primary);
+  color: var(--color-titulo);
+  font-weight: 500;
+}
+
+.site-cl .title-h1-v2 {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
 .site-cl .title-h2 {
@@ -40,12 +58,28 @@ body.page {
   border-width: 2px;
 }
 
+.site-cl .btn-secondary-material-icon {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-family: var(--font-primary);
+  color: var(--color-light) !important;
+  border-width: 2px;
+}
+
 .site-cl .bgn-primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   font-family: var(--font-primary);
   color: var(--color-light) !important;
   border-width: 2px;
+}
+
+.site-cl .bgn-primary-perfil {
+  background-color: var(--color-success);
+  /* border-color: var(--color-success); */
+  font-family: var(--font-primary);
+  color: var(--color-dark-gray) !important;
+  /* border-width: 2px; */
 }
 
 .site-cl .bgn-secondary {
@@ -111,6 +145,11 @@ body.page {
 
 .site-cl .title-p {
   font-family: var(--font-primary);
+}
+
+.site-cl .title-detalle {
+  font-family: var(--font-primary);
+  color: var(--color-dark-gray);
 }
 
 .font-primary {

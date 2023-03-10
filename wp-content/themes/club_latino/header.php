@@ -28,12 +28,12 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'club_latino'); ?></a>
 
 		<header id="masthead" class="site-header">
-			<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+			<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
 				<div class="container-fluid">
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a class="navbar-brand text-light" href="<?= home_url() ?>">Club Latino</a>
+					<a class="navbar-brand text-dark" href="<?= home_url() ?>"><img src="http://localhost/club-latino/wp-content/uploads/2023/03/Mi_proyecto-removebg-preview-e1678264376988.png" higt="70px" width="70px" /></a>
 					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 						<?php
 						$current_user = wp_get_current_user();
@@ -54,8 +54,8 @@
 						?>
 					</div>
 					<div id="dropdown-profile" class="dropdown">
-						<button class="btn btn-secondary dropdown-toggle btn-user-info" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="material-icons material-icons-round">face</span>
+						<button class="btn btn-secondary-material-icon dropdown-toggle btn-user-info" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="material-icons material-icons-round">person</span>
 						</button>
 						<ul class="dropdown-menu">
 							<?php
@@ -67,12 +67,12 @@
 									$page_url_login = get_permalink($page->ID);
 								}
 							?>
-								<li><a class="dropdown-item font-primary text-light" href="<?= $page_url_login ?>">Iniciar Sesión</a></li>
+								<li><a class="dropdown-item font-primary text-dark" href="<?= $page_url_login ?>">Iniciar Sesión</a></li>
 							<?php
 							} else {
 							?>
-								<li><a class="dropdown-item font-primary text-light" href="<?= get_url_by_slug("perfil") ?>">Mi Perfil</a></li>
-								<li><a class="dropdown-item font-primary text-light" href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a></li>
+								<li><a class="dropdown-item font-primary text-dark" href="<?= get_url_by_slug("perfil") ?>">Mi Perfil</a></li>
+								<li><a class="dropdown-item font-primary text-dark" href="<?php echo wp_logout_url(home_url()); ?>">Cerrar sesión</a></li>
 							<?php
 							}
 							?>

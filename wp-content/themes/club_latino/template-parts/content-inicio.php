@@ -1,9 +1,9 @@
 <?php
 $page_id = $args["page_id"];
 ?>
-<div id="box-tittle" class="d-flex flex-column mb-3">
-    <h2 class="title-h2 subtitle-main-init"><?= get_field("titulo", $page_id) ?></h2>
-    <h1 class="title-h1 title-main-init"><?= get_field("subtitulo", $page_id) ?></h1>
+<div id="box-tittle" class="d-flex flex-column mb-5">
+    <h2 class="title-homeh2 subtitle-main-init"><?= get_field("titulo", $page_id) ?></h2>
+    <h1 class="title-homeh1 title-main-init"><?= get_field("subtitulo", $page_id) ?></h1>
 </div>
 <div id="box-buttons" class="d-flex flex-row justify-content-center">
     <?php

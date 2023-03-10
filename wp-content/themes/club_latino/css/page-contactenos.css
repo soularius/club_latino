@@ -1,13 +1,13 @@
 #contactform .form-floating input {
     min-width: 420px;
-    border: 1px solid var(--color-secondary);
+    /* border: 1px solid var(--color-secondary); */
 }
 
 .card-contact {
     max-width: 800px;
     max-height: 600px;
-    box-shadow: 0px 0px 10px 0px var(--color-dark);
-    border: 2px solid var(--color-secondary);
+    box-shadow: 0px 0px 10px 0px var(--color-gray-light);
+    /* border: 2px solid var(--color-secondary); */
     background-color: #ffffffdb;
     overflow-y: auto;
 }
@@ -32,9 +32,9 @@
     align-items: center;
 }
 
-#box-obs textarea {
+/* #box-obs textarea {
     border: 1px solid var(--color-secondary);
-}
+} */
 
 .card-contact {
     max-width: 600px;

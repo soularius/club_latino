@@ -25,7 +25,7 @@
         <div class="card card-profile px-4 py-2">
             <div class="card-body">
                 <div class="profile-form">
-                    <h1 class="text-center mb-4 title-h1 title-profile">Perfil de Usuario</h1>
+                    <h1 class="text-center mb-4 title-h1-registre">Perfil de Usuario</h1>
                     <div class="d-flex align-items-start">
                         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <button class="btn-profile btn-secondary-light title-p nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio</button>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="tab-content w-100" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                <h2 class="text-center mb-4 title-h2">Bienvenid@ ha Club Latino</h2>
+                                <h2 class="text-center mb-4 title-h2"></h2>
                                 <?php show_status($user_id) ?>
                             </div>
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -70,7 +70,7 @@
             $group = search_data_group_user($user_id);
             $team = search_data_team_user($user_id);
         ?>
-            <table class="table table-dark table-hover">
+            <table class="table table-light table-hover">
                 <tbody>
                     <tr class="">
                         <th scope="row" class="title-p color-primary">Nombre de usuario</th>
@@ -137,14 +137,14 @@
 
         if (!$vencimiento) {
         ?>
-            <div class="alert alert-success bgn-primary title-p fw-bold" role="alert">
-                Tu membresia esta activa
+            <div class="alert alert-success bgn-primary-perfil title-p fw-medium" role="alert">
+                Tu membresia esta activa!
             </div>
         <?php
         } else {
         ?>
-            <div class="alert alert-danger bgn-danger title-p fw-bold" role="alert">
-                Tu membresia esta vencida, por favor comunicate con nosotros
+            <div class="alert alert-danger bgn-danger title-p fw-medium" role="alert">
+                Tu membresia esta vencida, por favor comunicate con nosotros.
             </div>
         <?php
 
@@ -159,11 +159,11 @@
 
         if (!empty($events)) {
         ?>
-            <h2 class="text-center mb-4 mt-4 title-h1 title-binnacle">Listado de tus eventos</h2>
+            <h2 class="text-center mb-4 mt-4 title-h1">Listado de tus eventos</h2>
             <?php
             foreach ($events as $key => $e) {
             ?>
-                <h2 class="text-center mb-4 title-h1-v2 title-events">
+                <h5 class="text-center mb-4 title-h1-v2 title-events">
                     Evento: <?= $e["name"] ?>
 
                     <a href="<?= home_url('/evento/?id=' . $e["id"]) ?>" target="_blank" class="color-primary url-event">
@@ -171,7 +171,7 @@
                             visibility
                         </span>
                     </a>
-                </h2>
+                </h5>
                 <p class="text-left mb-1 title-p">
                     <strong>Organizador:</strong>
                     <?= $e["organization"]["name"] ?>
@@ -226,7 +226,7 @@
                                     </td>
                                     <td>
                                         <a href="<?= home_url('/actividad/?id=' . $activities_subscribe["id"]) ?>" target="_blank" class="link-light">
-                                            <span class="title-p">Detalle</span>
+                                            <span class="title-detalle">Detalle</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -244,7 +244,7 @@
                     <p class="text-left mb-1 mt-3 title-p">
                         <strong>Actividades recomendadas</strong>
                     </p>
-                    <table class="table table-dark table-hover mt-4">
+                    <table class="table table-light table-hover mt-4">
                         <thead>
                             <tr>
                                 <th scope="col"># Id</th>

@@ -59,7 +59,7 @@ $roles = array(
 <div class="card card-register px-4 py-2">
     <div class="card-body">
         <div class="register-form">
-            <h1 class="text-center mb-4 title-h1 title-register">Registrar</h1>
+            <h1 class="text-center mb-4 title-h1-registre">Registrar</h1>
             <form name="registerform" id="registerform" class="d-flex flex-column justify-content-center align-items-center" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Maria">
